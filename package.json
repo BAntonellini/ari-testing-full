@@ -1,0 +1,37 @@
+{
+  "name": "ari-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index.js",
+    "start": "concurrently \"npm run dev\" \"npm run watch\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BAntonellini/ari-testing.git"
+  },
+  "author": "BAntonellini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BAntonellini/ari-testing/issues"
+  },
+  "homepage": "https://github.com/BAntonellini/ari-testing#readme",
+  "dependencies": {
+    "activedirectory": "^0.7.2",
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.0.0",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "express-validator": "^6.2.0",
+    "ldapjs": "^1.0.2",
+    "multer": "^1.4.2",
+    "pug": "^2.0.4",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}

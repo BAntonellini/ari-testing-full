@@ -1,0 +1,28 @@
+extends layout
+
+block contenido
+    h1= nombrePagina
+
+    form(action="/crearTicket" method="POST")
+        .form-group
+            label(for="ci_afectado") CI_Afectado
+            input(type="text", name="ci_afectado")
+        .form-group
+            label(for="contacto") Contacto
+            input(type="text", name="contacto")
+        .form-group
+            label(for="titulo") Titulo
+            input(type="text", name="titulo")
+        .form-group
+            label(for="descripcion") Descripción
+            input(type="text", name="descripcion")
+        .form-group
+            select(name="categoria")
+                each categoria in categorias
+                    option(value=categoria) #{categoria}
+        .form-group
+            select(name="subcategoria")
+                each subcategoria in subcategorias
+                    option(value=subcategoria) #{subcategoria}
+        .form-group
+            input(type="submit")
