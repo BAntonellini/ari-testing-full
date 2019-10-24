@@ -55,7 +55,7 @@ exports.formularioTickets = async (req, res, next) => {
             "Descripción": req.body.descripcion,
             "Categoría": req.body.categoria,
             "Subcategoría": req.body.subcategoria,
-            "Área": AREA,
+            "Area": AREA,
             "Impacto": IMPACTO,
             "Urgencia": URGENCIA,
             "Grupo_de_asignación": GRUPO_DE_ASIGNACION,
