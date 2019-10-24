@@ -43,7 +43,7 @@ exports.crearTicket = async (req, res) => {
     })
 }
 
-exports.formularioTickets = async (req, res, next) => {
+exports.formularioTickets = async (req, res, next) => { 
     var ticket = {
         "IMmain": {
             "Tc_Origen": TC_ORIGEN,
@@ -79,7 +79,14 @@ exports.formularioTickets = async (req, res, next) => {
     request(requestTktCreation, callback);
 
     function callback(err, res, body) {
-        console.log(body);
+        try {
+            
+        } catch (err) {
+            
+        }
+        var bodyJSON = JSON.parse(body);
+        console.log(bodyJSON.IMmain.ID_de_incidente);
+        console.log(bodyJSON.IMmain.Grupo_de_asignación);
     }
 
     next();
