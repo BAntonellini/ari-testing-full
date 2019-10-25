@@ -6,6 +6,7 @@ const SERVICIO_AFECTADO = "Mis Dispositivos";
 const CATEGORIAS = ['INCIDENTE', 'SOLICITUD'];
 const SUBCATEGORIAS = ['ACCESO', 'ADMINISTRACION', 'APLICACION', 'CONECTIVIDAD', 'CORREO', 'DATOS', 'FALLA', 'HARDWARE', 'INFORMACION GENERAL', 'INFORMACION IT', 'SOFTWARE']
 const AREA = "RECURSOS INSUFICIENTES";
+//const AREA = "AREA DE PRUEBA";
 const IMPACTO = "4";
 const URGENCIA = "4";
 const GRUPO_DE_ASIGNACION = "MI_T_AMBA_X_LOGISTICA";
@@ -55,14 +56,12 @@ exports.formularioTickets = async (req, res, next) => {
             "Descripción": req.body.descripcion,
             "Categoría": req.body.categoria,
             "Subcategoría": req.body.subcategoria,
-            "Area": AREA,
+            "Área": AREA,
             "Impacto": IMPACTO,
             "Urgencia": URGENCIA,
             "Grupo_de_asignación": GRUPO_DE_ASIGNACION,
         }
     }
-    console.log(req.body);
-    console.log(typeof (req.body));
 
     var auth = new Buffer("X001906" + ':' + "bVjrEKZqVrJhctWoTC").toString('base64');
     var requestTktCreation = {
@@ -79,7 +78,12 @@ exports.formularioTickets = async (req, res, next) => {
     request(requestTktCreation, callback);
 
     function callback(err, res, body) {
-        console.log(body);
+        var bodyJSON = JSON.parse(body);
+        console.log(bodyJSON);
+        // console.log(bodyJSON.IMmain.ID_de_incidente);
+        // console.log(bodyJSON.IMmain.Grupo_de_asignación);
+        /*console.log("ID de incidente: " + body.IMmain.ID_de_incidente)
+        console.log("Grupo asignado: " + body.IMmain.Grupo_de_asignación)*/
     }
 
     next();

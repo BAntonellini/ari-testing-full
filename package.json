@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./index.js",
-    "start": "concurrently \"npm run dev\" \"npm run watch\""
+    "dev": "node ./index.js"
   },
   "repository": {
     "type": "git",
